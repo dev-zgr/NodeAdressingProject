@@ -21,21 +21,6 @@ public class NodeRecordController {
         return nodeRecordSystemService.getAllRecords();
     }
 
-    @GetMapping("/get-nodes")
-    public NodeRecord getNodesByUUID(@RequestParam(name = "uuid") String uuid){
-        /*
-        return nodeRecordSystemService.getNodeRecordByUUID(uuid);
-
-         */
-        return null;
-    }
-
-    @GetMapping("/get-nodes-by-ip")
-    public NodeRecord getAllNodes(@RequestParam(name = "ipAdress") String ipAdress){
-        return nodeRecordSystemService.getNodeRecordByIpAdress(ipAdress);
-    }
-
-
     @PostMapping(value = "/register-nodes", consumes = "application/json")
     public ResponseEntity<String> registerNodes(@RequestBody NodeRecord nodeRecord){
         boolean status =  nodeRecordSystemService.registerNode(nodeRecord);

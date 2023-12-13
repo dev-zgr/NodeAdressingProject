@@ -8,5 +8,4 @@ import java.util.UUID;
 
 public interface NodeRecordRepository extends JpaRepository<NodeRecord, UUID> {
 
-    NodeRecord findByIpAdress(String ipAdress);
 }
