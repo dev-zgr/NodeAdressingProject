@@ -41,4 +41,10 @@ public class NodeRecordSystemService {
         }
     }
 
+    public NodeRecord getNodeRecordByIpAdress(String ipAdress) {
+
+
+            return recordRepository.findByIpAdress(ipAdress);
+
+    }
 }

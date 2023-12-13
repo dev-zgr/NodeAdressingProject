@@ -1,10 +1,9 @@
 package com.example.nodeadressingproject.DataLayer.Entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Type;
+import org.hibernate.engine.jdbc.env.internal.LobTypes;
 import org.w3c.dom.Node;
 
 import java.util.UUID;
@@ -24,16 +23,23 @@ public class NodeRecord {
     @Column(name = "is-active")
     boolean isActive;
 
-    public NodeRecord(UUID uuid, String ipAdress , boolean isActive){
+    @Lob
+    @Column(name="public_key", columnDefinition="BLOB")
+    private byte[] publicKey;
+
+
+    public NodeRecord(UUID uuid, String ipAdress , boolean isActive , byte[] publicKey){
         this.ipAdress = ipAdress;
         this.uuid = uuid;
         this.isActive = isActive;
+        this.publicKey = publicKey;
     }
 
     public NodeRecord(){
         this.uuid = null;
         this.ipAdress =null;
         this.isActive = false;
+        publicKey = new byte[2048];
     }
 }
 
