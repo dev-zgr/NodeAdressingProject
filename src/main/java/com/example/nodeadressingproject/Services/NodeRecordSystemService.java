@@ -2,6 +2,7 @@ package com.example.nodeadressingproject.Services;
 
 import com.example.nodeadressingproject.DataLayer.Entities.NodeRecord;
 import com.example.nodeadressingproject.DataLayer.Repositories.NodeRecordRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,8 +31,11 @@ public class NodeRecordSystemService {
         }
     }
 
+    @Transactional
     public boolean updateNode(NodeRecord nodeRecord) {
         try {
+
+
             var node = recordRepository.findById(nodeRecord.getUuid()).get();
             node.setActive(nodeRecord.isActive());
             recordRepository.save(node);

@@ -29,7 +29,7 @@ public class NodeRecordController {
 
     @PostMapping(value = "/updateNode", consumes = "application/json")
     public ResponseEntity<String> updateNodes(@RequestBody NodeRecord nodeRecord){
-        boolean status =  nodeRecordSystemService.registerNode(nodeRecord);
+        boolean status =  nodeRecordSystemService.updateNode(nodeRecord);
         return new ResponseEntity<String>("true", HttpStatus.OK);
     }
 
