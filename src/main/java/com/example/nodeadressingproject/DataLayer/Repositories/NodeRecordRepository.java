@@ -6,6 +6,9 @@ import org.w3c.dom.Node;
 
 import java.util.UUID;
 
+/**
+ * JPA Repository for handling database operations of NodeRecord.
+ */
 public interface NodeRecordRepository extends JpaRepository<NodeRecord, UUID> {
 
 }
