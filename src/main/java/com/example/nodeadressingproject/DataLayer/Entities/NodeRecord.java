@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
-import org.w3c.dom.Node;
 
 import java.util.UUID;
 
@@ -23,7 +22,7 @@ public class NodeRecord {
     private UUID uuid;
 
     @Column(name = "ip-adress")
-    private String ipAdress;
+    private String ipAddress;
 
     @Column(name = "is-active")
     boolean isActive;
@@ -32,11 +31,11 @@ public class NodeRecord {
      * Constructor for creating a NodeRecord with a specified UUID, IP address, and activation status.
      *
      * @param uuid      The unique identifier (UUID) of the node.
-     * @param ipAdress  The IP address of the node.
+     * @param ipAddress  The IP address of the node.
      * @param isActive  The activation status of the node.
      */
-    public NodeRecord(UUID uuid, String ipAdress , boolean isActive){
-        this.ipAdress = ipAdress;
+    public NodeRecord(UUID uuid, String ipAddress, boolean isActive){
+        this.ipAddress = ipAddress;
         this.uuid = uuid;
         this.isActive = isActive;
     }
@@ -46,7 +45,7 @@ public class NodeRecord {
      */
     public NodeRecord(){
         this.uuid = null;
-        this.ipAdress =null;
+        this.ipAddress =null;
         this.isActive = false;
     }
 }

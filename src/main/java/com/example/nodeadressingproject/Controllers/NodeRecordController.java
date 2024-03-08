@@ -36,7 +36,7 @@ public class NodeRecordController {
      * @param nodeRecord The node record to be registered.
      * @return ResponseEntity indicating the registration status.
      */
-    @PostMapping(value = "/register-nodes", consumes = "application/json")
+    @PostMapping(value = "/register-nodes")
     public ResponseEntity<String> registerNodes(@RequestBody NodeRecord nodeRecord){
         boolean status =  nodeRecordSystemService.registerNode(nodeRecord);
         return new ResponseEntity<String>("true", HttpStatus.OK);
