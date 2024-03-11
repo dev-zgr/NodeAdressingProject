@@ -1,4 +1,4 @@
-package com.example.nodeadressingproject.Services;
+package com.example.nodeadressingproject.Services.implementations;
 
 import com.example.nodeadressingproject.Controllers.UserAccountDTO;
 import com.example.nodeadressingproject.DataLayer.Entities.UserAccountEntity;

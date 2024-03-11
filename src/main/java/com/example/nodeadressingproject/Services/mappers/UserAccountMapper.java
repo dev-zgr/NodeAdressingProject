@@ -8,6 +8,7 @@ public class UserAccountMapper {
         user.setName(userAccountDTO.getName());
         user.setEmail(userAccountDTO.getEmail());
         user.setPassword(userAccountDTO.getPassword());
+        user.setResearchField(userAccountDTO.getResearchField());
         return user;
     }
 
@@ -15,6 +16,7 @@ public class UserAccountMapper {
         userAccountDTO.setName(user.getName());
         userAccountDTO.setEmail(user.getEmail());
         userAccountDTO.setPassword(user.getPassword());
+        userAccountDTO.setResearchField(user.getResearchField());
         return userAccountDTO;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.nodeadressingproject.Controllers;
 
-import com.example.nodeadressingproject.Services.UserAccountService;
+import com.example.nodeadressingproject.Services.implementations.UserAccountService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
