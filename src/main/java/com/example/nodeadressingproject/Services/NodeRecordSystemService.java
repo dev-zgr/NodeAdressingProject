@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Service class for managing node records in the blockchain.
@@ -66,5 +67,16 @@ public class NodeRecordSystemService {
             return false;
         }
     }
+
+    public byte[] getPublicKeyByUUID(UUID uuid){
+        try{
+            var node = recordRepository.findById(uuid);
+            return node.get().getPublicKey();
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+
 
 }

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * This class is the REST Controller for the nodes in the blockchain.
@@ -54,6 +55,10 @@ public class NodeRecordController {
         return new ResponseEntity<String>("true", HttpStatus.OK);
     }
 
+    @GetMapping(value = "/getPublicKey")
+    public byte[] getPublicKeyByUUID(@RequestParam UUID uuid){
+        return nodeRecordSystemService.getPublicKeyByUUID(uuid);
+    }
 
 
 }
