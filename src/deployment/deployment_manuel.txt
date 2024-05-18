@@ -1,0 +1,22 @@
+1- Download Docker Desktop on your computer and configure it. You can find installing instructions here → https://www.docker.com/products/docker-desktop/
+2-Enable Kubernetes (K8s) on your Docker Desktop. Follows the instructions here to enable it → https://docs.docker.com/desktop/kubernetes/
+Deploy NRS in your Kubernetes cluster. Open terminal -CMD and navigate to nrs/deployment project file.
+After navigating projects root directory navigate into deployment folder using cd /deployment
+deploy all the services using kubectl apply -f [filename].yml
+Deploy the clusters as following order:
+kubectl apply -f configmaps.yml
+kubectl apply -f mysql-storage.yml
+kubectl apply -f mysql.yml
+kubectl apply -f nrs.yml
+
+
+Wait 5-10 minutes to start nrs.
+
+
+Need to remove Deployment ?
+Remove all the deployments from your K8s Cluster. Using following command: kubectl delete -f [filename].yml
+
+kubectl delete -f configmaps.yml
+kubectl delete -f mysql-storage.yml
+kubectl delete -f mysql.yml
+kubectl delete -f nrs.yml
